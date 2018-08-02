@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hot dogs == sandwiches?</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/assets/css/index.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="/assets/css/gridforms/gridforms.css">
+  </head>
+  <body>
+    <h1 id="hotDogOutput">Hot dog status:</h1>
+    <form class="grid-form" id="customer">
+      <fieldset>
+        <legend>Form Section</legend>
+        <div data-row-span="2">
+          <div data-field-span="1">
+            <label>Name</label>
+            <input type="text" name="name">
+          </div>
+          <div data-field-span="1">
+            <label>Position</label>
+            <input type="text" name="position">
+          </div>
+          <div data-field-span="1">
+            <label>Salary</label>
+            <input type="text" name="salary">
+          </div>
+          <div data-field-span="1">
+            <label>Start Date</label>
+            <input type="date" name="startDate">
+          </div>
+          <div data-field-span="1">
+            <label>extn</label>
+            <input type="text" name="extn">
+          </div>
+          <div data-field-span="1">
+            <label>Office</label>
+            <input type="text" name="office">
+          </div>
+          <div data-field-span="1">
+            <input type="submit" name="saveButton">
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    <input type="textfield" id="latestHotDogStatus">
+    <button id="saveButton">Save</button>
+    <button id="loadButton">Load</button>
+    <table class="display" id="myTable" style="width:95%">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Office</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th> </th>
+          <th>Name</th>
+          <th>Postion</th>
+          <th>Office</th>
+          <th>Salary</th>
+        </tr>
+      </tfoot>
+    </table>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

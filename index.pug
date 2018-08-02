@@ -1,0 +1,59 @@
+doctype html
+html
+  head
+    title Hot dogs == sandwiches?
+    script(src='https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js')
+    link(href= 'https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css', rel='stylesheet')
+    link(href='./assets/css/index.css', rel='stylesheet')
+    <link rel="stylesheet" type="text/css" href="/assets/css/gridforms/gridforms.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/gridforms/gridforms.css">
+
+
+  body
+    h1(id='hotDogOutput') Hot dog status:
+    form(class='grid-form' id="customer")
+      fieldset
+        legend Form Section
+        div(data-row-span="2")
+          div(data-field-span="1")
+            label Name
+            input(type="text" name="name")
+          div(data-field-span="1")
+            label Position
+            input(type="text" name="position")
+          div(data-field-span="1")
+            label Salary
+            input(type="text" name="salary")
+          div(data-field-span="1")
+            label Start Date
+            input(type="date" name="startDate")
+          div(data-field-span="1")
+            label extn
+            input(type="text" name="extn")
+          div(data-field-span="1")
+            label Office
+            input(type ="text" name="office")
+          div(data-field-span="1")
+            input(type="submit" name="saveButton")
+    input(type="textfield" id="latestHotDogStatus")
+    button(id="saveButton") Save
+    button(id="loadButton") Load
+
+    table(id="myTable" class="display" style = 'width:95%')
+      thead
+        tr
+          th
+          th Name
+          th Position
+          th Office
+          th Salary
+      tfoot
+        tr
+          th 
+          th Name
+          th Postion
+          th Office
+          th Salary
+    script(src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js")
+    script(src = "https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js")
+    script(src="./app.js")
