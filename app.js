@@ -11,8 +11,6 @@
   var firestore= firebase.firestore()
 
   const docRef= firestore.collection("Customers")
-  const outputHeader = document.querySelector("#hotDogOutput")
-  const inputTextField = document.querySelector("#latestHotDogStatus")
   const saveButton=document.querySelector("#saveButton")
   const loadButton=document.querySelector("#loadButton")
 
@@ -47,7 +45,7 @@
         myData.push(data)
       })
         console.log('data', myData)
-        outputHeader.innerText="Hot dog status: " + Object.keys(myData)
+
         populateTable(myData)
 
     }).catch(function(error){
@@ -56,14 +54,17 @@
   })
 
   getRealtimeUpdates=function(){
-    const myData =[]
     docRef.onSnapshot(function(doc){
+      const myData =[]
+      console.log('Got inside Snapshot',Object.keys(doc.docs))
       doc.docs.forEach(each=>{
         let data = each.data()
+        // debugger
         data.id=each.id
         myData.push(data)
-        populateTable(myData)
+        console.log('myData',Object.keys(myData),myData)
       })
+      populateTable(myData)
     })}
 
 /* Formatting function for row details - modify as you need */
@@ -87,6 +88,15 @@ function format ( d ) {
 var table
 // $(document).ready(function($) {
   function populateTable(data){
+    if ($.fn.dataTable.isDataTable('#myTable')){
+      console.log('Got inside if',Object.keys(data))
+      table = $('#myTable').DataTable();
+      table.clear();
+      table.rows.add(data);
+      table.draw()
+    }
+    else{
+      console.log('Got inside else',Object.keys(data))
     console.log('data to populate',data)
    table = $('#myTable').DataTable( {
     select: true,
@@ -102,7 +112,7 @@ var table
       { "data" : "office" },
       { "data" : "salary" }
   ],"order": [[1, 'asc']]
- } );}
+ } );}}
    
 
   // Add event listener for opening and closing details

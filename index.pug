@@ -1,16 +1,16 @@
 doctype html
 html
   head
-    title Hot dogs == sandwiches?
+    title CRM Light
     script(src='https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js')
     link(href= 'https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css', rel='stylesheet')
     link(href='./assets/css/index.css', rel='stylesheet')
-    <link rel="stylesheet" type="text/css" href="/assets/css/gridforms/gridforms.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/gridforms/gridforms.css">
-
+    link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css")
+    link(rel="stylesheet" type="text/css" href="/assets/css/gridforms/gridforms.css")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
 
   body
-    h1(id='hotDogOutput') Hot dog status:
+    h1 CRM Light
     form(class='grid-form' id="customer")
       fieldset
         legend Form Section
@@ -38,6 +38,12 @@ html
     input(type="textfield" id="latestHotDogStatus")
     button(id="saveButton") Save
     button(id="loadButton") Load
+    //- clientList-tag
+    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.11.1/riot+compiler.min.js")
+    //- script(src='./tags/addClient-tag.js')
+    //- script.
+    //-   riot.mount('clientList-tag')
+
 
     table(id="myTable" class="display" style = 'width:95%')
       thead
@@ -56,4 +62,5 @@ html
           th Salary
     script(src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js")
     script(src = "https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js")
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
     script(src="./app.js")
