@@ -10,57 +10,18 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1")
 
   body
+    script(src='//cdn.jsdelivr.net/npm/riot@3.10.3/riot.min.js')
+    script(src='./tags/first-tag.js')
+    script(src='./tags/tableLayout-tag.js')
+    script(src='./tags/customerList-tag.js')
     h1 CRM Light
-    form(class='grid-form' id="customer")
-      fieldset
-        legend Form Section
-        div(data-row-span="2")
-          div(data-field-span="1")
-            label Name
-            input(type="text" name="name")
-          div(data-field-span="1")
-            label Position
-            input(type="text" name="position")
-          div(data-field-span="1")
-            label Salary
-            input(type="text" name="salary")
-          div(data-field-span="1")
-            label Start Date
-            input(type="date" name="startDate")
-          div(data-field-span="1")
-            label extn
-            input(type="text" name="extn")
-          div(data-field-span="1")
-            label Office
-            input(type ="text" name="office")
-          div(data-field-span="1")
-            input(type="submit" name="saveButton")
-    input(type="textfield" id="latestHotDogStatus")
-    button(id="saveButton") Save
-    button(id="loadButton") Load
-    //- clientList-tag
-    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.11.1/riot+compiler.min.js")
-    //- script(src='./tags/addClient-tag.js')
-    //- script.
-    //-   riot.mount('clientList-tag')
+    first-tag
+    tableLayout-tag
+    customerList-tag
 
-
-    table(id="myTable" class="display" style = 'width:95%')
-      thead
-        tr
-          th
-          th Name
-          th Position
-          th Office
-          th Salary
-      tfoot
-        tr
-          th 
-          th Name
-          th Postion
-          th Office
-          th Salary
+    
     script(src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js")
     script(src = "https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js")
-    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-    script(src="./app.js")
+    script(defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js")
+    script.
+      riot.mount('first-tag,tableLayout-tag,customerList-tag')
